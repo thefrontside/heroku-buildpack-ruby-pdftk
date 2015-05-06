@@ -16,7 +16,7 @@ class Pdftk < BaseCustom
     write_stdout "compiling #{name}"
     FileUtils.mkdir_p path
     Dir.chdir path do
-      %x{ tar -xz -C #{path} -f #{pdfktk_path} }
+      %x{ tar -xz -C #{path} -f #{pdftk_path} }
     end
     write_stdout "complete compiling #{name}"
   end
