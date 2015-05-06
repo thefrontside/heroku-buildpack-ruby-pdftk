@@ -1,7 +1,7 @@
 require 'fileutils'
 class Pdftk < BaseCustom
   def vendor_path
-    File.expand_path(File.dirname(__FILE__), '..', '..', 'vendor')
+    File.join(File.dirname(__FILE__), '..', '..', 'vendor')
   end
   def path
     "#{build_path}/vendor/#{name}"
