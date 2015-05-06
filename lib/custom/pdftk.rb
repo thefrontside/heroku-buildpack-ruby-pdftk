@@ -1,5 +1,8 @@
 require 'fileutils'
 class Pdftk < BaseCustom
+  def vendor_path
+    File.expand_path(File.dirname(__FILE__), '..', '..', 'vendor')
+  end
   def path
     "#{build_path}/vendor/#{name}"
   end
@@ -7,7 +10,7 @@ class Pdftk < BaseCustom
     "pdftk"
   end
   def pdftk_path
-    "#{build_path}/vendor/pdftk.tar.gz"
+    "#{vendor_path}/pdftk.tar.gz"
   end
   def used?
     File.exist?("#{build_path}/bin/pdftk") && File.exist?("#{build_path}/bin/lib/libgcj.so.12")
